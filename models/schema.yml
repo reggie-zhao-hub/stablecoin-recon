@@ -1,0 +1,13 @@
+# 数据质量测试：dbt test 会自动检查这些规则
+version: 2
+models:
+  - name: daily_reconciliation
+    description: "每日储备市值 vs 流通面值的对账表"
+    columns:
+      - name: date
+        tests:
+          - unique          # 每天只能有一行，不能重复
+          - not_null        # 日期不能为空
+      - name: is_fully_backed
+        tests:
+          - not_null        # 是否全额支持不能为空

@@ -1,0 +1,10 @@
+# dbt 项目配置：告诉 dbt 这个项目叫什么、模型和 CSV 放在哪
+name: 'stablecoin_recon'
+version: '1.0.0'
+config-version: 2
+profile: 'stablecoin_recon'      # 要和 profiles.yml 顶部的名字一致
+model-paths: ["models"]
+seed-paths: ["seeds"]
+models:
+  stablecoin_recon:
+    +materialized: view          # 模型默认做成「视图」

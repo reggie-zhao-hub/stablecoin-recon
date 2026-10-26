@@ -1,0 +1,12 @@
+# dbt 运行产物（每次跑都会重新生成，不该提交）
+target/
+logs/
+dbt_packages/
+
+# 本地数据库文件（数据可重新 seed 生成）
+*.duckdb
+*.duckdb.wal
+
+# dbt 个人配置（含本机信息，不该提交）
+.user.yml
+dbt_internal_packages/

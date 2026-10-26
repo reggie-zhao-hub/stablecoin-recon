@@ -1,0 +1,7 @@
+# 连接配置：告诉 dbt 用哪个数仓。这里用 duckdb（跑在本地文件上的轻量数仓）
+stablecoin_recon:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'stablecoin_recon.duckdb'
